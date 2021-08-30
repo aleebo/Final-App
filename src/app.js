@@ -5,10 +5,8 @@ function formatTime(timestamp) {
     hours = `0${hours}`;
   }
 
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+  // let minutes = date.getMinutes();
+  // if (minutes < 10) { minutes = `0${minutes}`; }
 
   let days = [
     "Sunday",
@@ -69,8 +67,9 @@ function displayTemperture(response) {
 }
 function search(city) {
   let units = "metric";
-  let apiKey = "4a4a95a1db5242c6c908fa1c31b680b9c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let defaultCity = "New York";
+  let apiKey = "04e088e25ccb622f4891c5136c21db30";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperture);
 }
 function handleSubmit(event) {
@@ -82,16 +81,16 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("Seoul");
+search("New York");
 
 function getForecast(coordinates) {
-  let apiKey = "4a4a95a1db5242c6c908fa1c31b680b9c";
+  let apiKey = "04e088e25ccb622f4891c5136c21db30";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
 function getPosition(position) {
-  let apiKey = "4a4a95a1db5242c6c908fa1c31b680b9c";
+  let apiKey = "04e088e25ccb622f4891c5136c21db30";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let units = "metric";
@@ -144,3 +143,25 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
 
 let celsiusTemperture = null;
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temperature");
+  let currentTemperature = temperatureElement.innerHTML;
+  currentTemperature = Number(currentTemperature);
+
+  if (celciusFahrenheitLink.innerHTML === "°C") {
+    temperatureElement.innerHTML = Math.round(
+      (currentTemperature * 9) / 5 + 32
+    );
+    celciusFahrenheitLink.innerHTML = "°F";
+  } else {
+    temperatureElement.innerHTML = Math.round(
+      ((currentTemperature - 32) * 5) / 9
+    );
+    celciusFahrenheitLink.innerHTML = "°C";
+  }
+}
+
+let celciusFahrenheitLink = document.querySelector("#celcius-fahrenheit");
+celciusFahrenheitLink.addEventListener("click", convertToFahrenheit);
