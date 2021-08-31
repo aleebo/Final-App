@@ -51,7 +51,7 @@ function displayTemperture(response) {
 
   celsiusTemperture = response.data.main.temperture;
 
-  mainTemperture.innerHTML = Math.round(celsiusTemperture);
+  // mainTemperture.innerHTML = Math.round(celsiusTemperture);
   mainCity.innerHTML = response.data.name;
   mainDescription.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
@@ -164,4 +164,4 @@ function convertToFahrenheit(event) {
 }
 
 let celciusFahrenheitLink = document.querySelector("#celcius-fahrenheit");
-celciusFahrenheitLink.addEventListener("click", convertToFahrenheit);
+//celciusFahrenheitLink.addEventListener("click", convertToFahrenheit);
