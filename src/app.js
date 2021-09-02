@@ -163,5 +163,5 @@ function convertToFahrenheit(event) {
   }
 }
 
-let celciusFahrenheitLink = document.querySelector("#celcius-fahrenheit");
-celciusFahrenheitLink.addEventListener("click", convertToFahrenheit);
+//let celciusFahrenheitLink = document.querySelector("#celcius-fahrenheit");
+//celciusFahrenheitLink.addEventListener("click", convertToFahrenheit);
