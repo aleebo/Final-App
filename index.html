@@ -20,11 +20,11 @@
     <link href="src/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-         <div class="container">
+    <div class="container">
       <div class="background">
         <div class="weather-app-wrapper">
             <div class="weather-app" id="weather-app">
-            <form class="mb-3" id="search-form">
+            <form id="search-form" class="mb-3">
            <div class="row">
             <div class="col-6">
               <input
@@ -43,11 +43,9 @@
                 class="btn btn-primary w-100" />
     
         </div>
-            </div>
+    </div>
           </div>
            </form>
- 
-          <br />
  
 <div class="overview">
     <div class="row">
@@ -57,17 +55,20 @@
  
           <ul>
   <li> <span id="date"></span></li>
-  <li id="main-description">Sunny</li>  
+  <li id="description">Sunny</li>  
     </ul>
 </div>
  
 <div class="row">
-    <div class="col-6"> <div class="float-left">
-        <div class="clearfix weather-temperature">
+    <div class="col-6">
+         <div class="clearfix weather-temperature">
             <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="Cloudy" id="main-icon" class="float-left" />
-           
- <strong id="main-temperature">23</strong>
- <span class="units"><a href="#" id="celsius-link" class="active">°C</a> |<a href="#" id="fahrenheit-link"> °F</a></span> 
+        <div class="float-left">
+       
+ <strong id="temperature">23</strong>
+ <span class="units">
+     <a href="#" id="celsius-link" class="active">°C</a> |
+     <a href="#" id="fahrenheit-link"> °F</a></span> 
             </div>
         </div>
     </div>
@@ -79,9 +80,9 @@
 </ul>
     </div>
 </div>
- 
+ </div>
     <span class="creater"><small> <a href="https://github.com/aleebo/Final-Weather-App" target="_blank"> Open-sourced,</a> by Alicia Vuong</small> </span>
- </div></div></div>
+ </div></div>
  
     <script src="src/app.js"></script>
   </body>
