@@ -19,7 +19,7 @@ h1 {
 }
 
 .container {
-  max-width: 850px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 15px 60px;
 }
@@ -60,7 +60,7 @@ strong {
 .weather-forecast {
   margin-top: 20x;
   text-align: center;
-  color: #58b3d3;
+  color: #000;
 }
 
 .weather-forecast-date {
